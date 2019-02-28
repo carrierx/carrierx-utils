@@ -70,7 +70,7 @@ def main():
                 params['filter'] = filter
 
             r = requests.get(
-                url='{0}/dids/inventory'.format(args.api_base_url),
+                url='{0}/phonenumber/available_dids'.format(args.api_base_url),
                 auth=api_auth,
                 headers=api_headers,
                 params=params,
@@ -92,7 +92,7 @@ def main():
                     wanted_i['callback_url'] = args.callback_url
 
                 r = requests.post(
-                    url='{0}/dids'.format(args.api_base_url),
+                    url='{0}/phonenumber/dids'.format(args.api_base_url),
                     auth=api_auth,
                     headers=api_headers,
                     data=json.dumps(wanted_i),
